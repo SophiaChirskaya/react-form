@@ -18,21 +18,20 @@ function App() {
   const [title, setTitle] = useState(initialBlog);
   const [newTitle, setNewTitle] = useState('');
 
-  function renderTitles() {
-    return titles.map(title => (
 
-    ))
-  }
 
 
 
 
   return (
     <>
-    <input type='text' value={title}
-    onChange={e => { setTitle(e.target.value) }} />
-    <p>Il titolo {title}</p>
-
+    <form onSubmit={handleSubmit}>
+    <input type='text' value={newTitle}
+    onChange={event => { setNewTitle(event.target.value) }} 
+    />
+    <button>Invia</button>
+    
+    </form>
     </>
   )
 }
