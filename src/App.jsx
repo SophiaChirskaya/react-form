@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
 
-  const titles = [
+  const initTitles = [
     "Alla Scoperta delle Meraviglie Nascoste",
     "Come Viaggiare con un Budget Ridotto",
     "Diario di Viaggio: Esperienze Indimenticabili",
@@ -15,7 +15,9 @@ function App() {
     "Viaggi Eco-Sostenibili: Dove Andare e Cosa Fare"
   ];
 
-  const [title, setTitle] = useState(initialBlog);
+  
+
+  const [titles, setTitles] = useState(initTitles);
   const [newTitle, setNewTitle] = useState('');
 
 
@@ -25,14 +27,21 @@ function App() {
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
+    {/* <form onSubmit={addTask}>
     <input type='text' value={newTitle}
     onChange={event => { setNewTitle(event.target.value) }} 
     />
     <button>Invia</button>
     
-    </form>
+    </form> */}
+
+    <ul>
+      {titles.map((title, i) => (
+        <li key={i}>{title}</li>
+      ))}
+    </ul>
     </>
+  
   )
 }
 
